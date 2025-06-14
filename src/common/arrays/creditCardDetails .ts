@@ -8,13 +8,13 @@ export const creditCardDetails: ICreditCardDetails[] = [
     },
 
     {
-        title: "Up to 600 000 ₽",
+        title: "Up to 600 000 USD",
         description: "Credit limit",
         tooltip: "Over the limit willaccrue percent.",
     },
 
     {
-        title: "0 ₽",
+        title: "0 USD",
         description: "Card service is free",
         tooltip: "Promotion valid until December 31, 2022.",
     },

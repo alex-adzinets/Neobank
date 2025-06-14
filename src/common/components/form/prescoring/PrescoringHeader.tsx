@@ -52,7 +52,7 @@ const PrescoringHeader = ({ register, error, dirty }: IPrescoringHeaderProps) =>
 
             <div>
                 <h3 className="prescoring__subtitle">You have chosen the amount</h3>
-                <p className="prescoring__amount">{formatAmount(value) + " ₽"}</p>
+                <p className="prescoring__amount">{formatAmount(value) + " USD"}</p>
             </div>
         </div>
     )

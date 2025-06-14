@@ -3,7 +3,7 @@ import { IAboutCard } from "@/common/interfaces/card";
 export const aboutCard: IAboutCard[] = [
     {
         icon: "money",
-        title: "Up to 50 000 ₽",
+        title: "Up to 50 000 USD",
         description: "Cash and transfers without commission and percent",
     },
 

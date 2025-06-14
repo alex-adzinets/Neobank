@@ -13,8 +13,20 @@ export const subscribeNews = async (data: string) => {
 
 //отпрвка prescoring
 export const postPrescroring = async (data: IPrescoring): Promise<IOffer[]> => {
-    const response = await axios.post<IOffer[]>(`${baseUrl}/application`, data);
-    return response.data;
+    // const response = await axios.post<IOffer[]>(`${baseUrl}/application`, data);
+    // return response.data;
+    return [
+        {
+        applicationId: 555,
+        requestedAmount: data.amount,
+        totalAmount: Math.floor(data.amount + 12 * 0.025),
+        term: 12,
+        monthlyPayment: Math.floor((data.amount + 12 * 0.025) / 12),
+        rate: 0.025,
+        isInsuranceEnabled: true,
+        isSalaryClient: true,
+        }
+    ]
 };
 
 //отправка выбранного предложения 

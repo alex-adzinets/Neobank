@@ -18,7 +18,7 @@ export const cardConditions: ICardConditions[] = [
 
     {
         key: "Maximum credit limit on the card",
-        value: "600 000 ₽",
+        value: "600 000 USD",
     },
 
     {
@@ -28,12 +28,12 @@ export const cardConditions: ICardConditions[] = [
 
     {
         key: "Max cashback per month",
-        value: "15 000 ₽",
+        value: "15 000 USD",
     },
 
     {
         key: "Transaction Alert",
-        value: ["60 ₽ — SMS or push notifications",
-               "0 ₽ — card statement, information about transactions in the online bank"]
+        value: ["60 USD — SMS or push notifications",
+               "0 USD — card statement, information about transactions in the online bank"]
     },
 ]

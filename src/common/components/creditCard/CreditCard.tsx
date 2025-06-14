@@ -7,12 +7,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { EApplicationStatus, EApplicationStep } from "@/common/enums/application";
 import { useNavigate } from "react-router-dom";
+import { useActions } from "@/store/actions";
 
 interface ICreditCardProps {
     formRef?: RefObject<HTMLElement>;
 };
 
 const CreditCard = ({ formRef }: ICreditCardProps) => {
+    const { resetApplication } = useActions();
     const application = useSelector((state: RootState) => state.applicationReducer);
     const navigate = useNavigate();
 
@@ -37,6 +39,7 @@ const CreditCard = ({ formRef }: ICreditCardProps) => {
         switch (application.step) {
             case EApplicationStatus.PREAPPROVAL:
             case EApplicationStep.PRESCORING:
+                resetApplication();
                 if (formRef?.current) {
                     formRef.current.scrollIntoView({
                         behavior: "smooth",

@@ -30,10 +30,10 @@ const OfferCard = ({ card }: IOfferCardProps) => {
         <article className="offer-card">
             <img className="offer-card__image" src={surprise} alt="surpise image" height="150" />
 
-            <p className="offer-card__paragraph">Requested amount: {card.requestedAmount} ₽</p>
-            <p className="offer-card__paragraph">Total amount: {card.totalAmount} ₽</p>
+            <p className="offer-card__paragraph">Requested amount: {card.requestedAmount} USD</p>
+            <p className="offer-card__paragraph">Total amount: {card.totalAmount} USD</p>
             <p className="offer-card__paragraph">For {card.term} months</p>
-            <p className="offer-card__paragraph">Monthly payment: {card.monthlyPayment} ₽</p>
+            <p className="offer-card__paragraph">Monthly payment: {card.monthlyPayment} USD</p>
             <p className="offer-card__paragraph">Your rate: {card.rate}%</p>
             <p className="offer-card__paragraph offer-card__paragraph_flex">
                 Insurance included

@@ -30,6 +30,7 @@ const applicationSlice = createSlice({
     initialState,
     reducers: {
         setApplicationData(state, action: PayloadAction<IOffer[]>) {
+            console.log("setApplicationData - action: "+ JSON.stringify(action))
             state.applicationId = action.payload[0].applicationId;
             state.offers = action.payload;
             state.step = EApplicationStatus.PREAPPROVAL;
@@ -48,6 +49,7 @@ const applicationSlice = createSlice({
         },
 
         resetApplication(state) {
+            console.log("Reset app")
             state.applicationId = null;
             state.offers = null;
             state.step = EApplicationStep.PRESCORING;
