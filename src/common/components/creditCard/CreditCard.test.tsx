@@ -4,6 +4,7 @@ import CreditCard from "@/common/components/creditCard/CreditCard";
 
 jest.mock("react-redux", () => ({
     useSelector: jest.fn(),
+    useDispatch: () => jest.fn(),
 }));
 
 const mockedUsedNavigate = jest.fn();
