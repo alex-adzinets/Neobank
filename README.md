@@ -1,50 +1,54 @@
 # NeoBank
 
-Добро пожаловать в NeoBank — веб-приложение для удобного оформления кредитов, разработанное на React с использованием TypeScript. Приложение позволяет пользователям:
+Welcome to NeoBank — a web application for convenient credit applications, developed with React and TypeScript. The application allows users to:
 
-- Просматривать информацию о банке и его продуктах
-- Следить за новостями и курсами валют
-- Оформлять кредиты
+- View information about the bank and its products
+- Follow news and exchange rates
+- Apply for loans
 
-## Логика оформления кредита
+## Figma
 
-1. Пользователь заполняет форму (prescoring) на странице loan и после отправки данных создаётся уникальный id заявки.
-2. Начинается обработка prescoring заявки и есть она проходит, то пользователю становятся доступны 4 предложения на выбор (loanOffer) с разными условиями (например без страховки, со страховкой, с зарплатным клиентом, со страховкой и зарплатным клиентом).
-3. Пользователь выбирает одно из предложений и отправляется запрос, после чего его заявка сохраняется.
-4. После создание пользователю показывается сообщение о том, что необходимо дождаться ответа по заявке на почту.
-5. На почту клиенту приходит письмо с текстом "Ваша заявка предварительно одобрена, завершите оформление".
-6. В письме клиент переходит на страницу loan/id и заполняет вторую форму, где указывает свои паспортные данные и работу. После отправки формы, показывается сообщение, что ответ по заявке придёт на почту. Также сразу после отправки запускается таймер на 10 секунд и если приходит статус CC_DENIED, то происходит редирект на главную страницу и оформление завершается.
-7. Происходит scoring данных, бэкенд рассчитывает все данные по кредиту (ПСК, график платежей и тд). После валидации данных пользователю приходит письмо на почту с одобрением или отказом. Если кредит одобрен, то в письме присутствует ссылка на запрос "Сформировать документы", loan/id/document.
-8. Перейдя по ссылке пользователь отрисовывается график платежей от первого до последнего месяца, если пользователь согласен, он нажимает на checkbox и отправляет документы на формирование, после на этой странице показывается текст, что необходимо перейти в почту.
-9. Пользователю на почту приходят документы для подписания и ссылку на запрос на согласие с условиями. При переходе по ссылке loan/id/document/sign пользователь нажимает на checkbox и отправляет документы на подписание. Пользователь может отказаться от условий или согласиться. После отправки опять показывается надпись с предложением перейти в почту.
-10. Если пользователь согласился, то на почту отправляется код подтверждения, при переходе на loan/id/code пользователь вводит code. Если введённый код неверный, то показывается сообщение с ошибкой. Если полученный код совпадает с отправленными, то выводится экран с поздравлением и оформление кредита заканчивается.
+Generated with Codia: https://www.figma.com/design/039QossFaiAFWwnsbNQRpo/Neobank
 
-## Запуск проекта
+## Loan application logic
 
-Для запуска проекта выполните:
+1. The user fills out a form (prescoring) on the loan page, and after submitting the data, a unique application id is created.
+2. Prescoring processing begins, and if it passes, the user gets 4 offers to choose from (loanOffer) with different conditions (for example without insurance, with insurance, salary client, with insurance and salary client).
+3. The user selects one of the offers and sends a request, after which their application is saved.
+4. After creation, the user sees a message that they need to wait for the response by email.
+5. The user receives an email with the text "Your application is pre-approved, complete the application."
+6. In the email, the client goes to the loan/id page and fills out a second form with passport data and work information. After submitting the form, a message appears that the response will come by email. Also, immediately after submission, a 10-second timer starts, and if the status CC_DENIED arrives, the user is redirected to the main page and the application process ends.
+7. Data scoring happens, the backend calculates all credit data (APR, payment schedule, etc.). After validation, the user receives an approval or denial email. If approved, the email contains a link to the request "Generate documents", loan/id/document.
+8. After following the link, the user sees the payment schedule from the first to the last month; if the user agrees, they check a checkbox and submit the documents for generation. After that, the page shows a message that the user should check their email.
+9. The user receives documents by email and a link to confirm acceptance of terms. By following the link loan/id/document/sign, the user checks a checkbox and submits documents for signing. The user can refuse or agree to the terms. After submitting, a message appears again suggesting to check the email.
+10. If the user agrees, a confirmation code is sent by email. On loan/id/code, the user enters the code. If the entered code is incorrect, an error message is shown. If the code matches, a congratulation screen appears and the loan application process ends.
 
-1. Клонируйте репозиторий:
+## Project launch
+
+To run the project, do the following:
+
+1. Clone the repository:
    ```bash 
    git clone https://github.com/ilyhan/Neobank.git
    ```
 
-2. Перейдите в папку проекта:
-   ```bash 
+2. Go to the project folder:
+   ```bash
    cd Neobank
    ```
 
-3. Запустите приложение:
-   ```bash 
-   npm run dev 
+3. Run the app:
+   ```bash
+   npm run dev
    ```
-После выполнения этих команд приложение будет доступно по адресу http://localhost:5173, и вы сможете работать с ним в браузере.
 
-▎ Контакты
+After these commands, the app will be available at http://localhost:5173 and you can use it in the browser.
 
-Если у вас остались вопросы, обращайтесь: 
+▎ Contacts
 
-- По почте: ilya.nesterov2003@yandex.ru
-- В Телеграм: [@DJNest](https://t.me/DJN)
+If you have any questions, contact:  
 
+- By email: ilya.nesterov2003@yandex.ru  
+- On Telegram: [@DJNest](https://t.me/DJN)
 
-## Спасибо за интерес к моему проекту!
+## Thank you for your interest in my project!
